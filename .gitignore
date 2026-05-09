@@ -20,8 +20,9 @@ ENV/
 *.onnx
 
 # Data & Databases
-*.csv
-*.xlsx
+# Allow datasets for analytics dashboards
+!*.csv
+!*.xlsx
 *.sqlite3
 dataset/
 known_faces/*.pkl
