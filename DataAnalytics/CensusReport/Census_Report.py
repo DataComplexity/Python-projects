@@ -10,12 +10,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 import io
+import os
 
 
 # In[95]:
 
 
-df = pd.read_excel(r'C:\Users\Lakshya\Adult_Income_Census\adult.xlsx', na_values="?")
+df = pd.read_excel(os.path.join(os.path.dirname(__file__), 'Adult_Income_Census', 'adult.xlsx'), na_values="?")
 
 
 # In[96]:
@@ -412,7 +413,9 @@ plt.show()
 # =====================================================
 
 @st.cache_data
-def load_data(path=r'C:\Users\Lakshya\Adult_Income_Census\adult.xlsx'):
+def load_data(path=None):
+    if path is None:
+        path = os.path.join(os.path.dirname(__file__), 'Adult_Income_Census', 'adult.xlsx')
     df = pd.read_excel(path, na_values="?")
 
     # Drop missing rows for clean analytics

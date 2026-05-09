@@ -13,12 +13,13 @@ from matplotlib import font_manager
 import seaborn as sns
 import streamlit as st
 import io
+import os
 
 
 # In[2]:
 
 
-df = pd.read_csv(r'C:\Users\Lakshya\Documents\Data_Sets\books.csv')
+df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'Books', 'books.csv'))
 
 
 # In[3]:
@@ -622,7 +623,9 @@ def rolling_avg_rating(arr, window=10):
 
 # ---------------- Load Data ---------------- #
 # @st.cache_data
-def load_data(path=r"C:\Users\Lakshya\Documents\Data_Sets\books.csv"):
+def load_data(path=None):
+    if path is None:
+        path = os.path.join(os.path.dirname(__file__), "Books", "books.csv")
     df = pd.read_csv(path, encoding='utf-8', low_memory=False)
     # remove any Unnamed junk columns
     df = df.loc[:, ~df.columns.str.contains("^Unnamed")]

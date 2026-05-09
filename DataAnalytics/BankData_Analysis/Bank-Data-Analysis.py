@@ -9,12 +9,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 import io
+import os
 
 
 # In[45]:
 
 
-df = pd.read_excel(r'C:\Users\Lakshya\Bank\bank-additional-full.xlsx')
+df = pd.read_excel(os.path.join(os.path.dirname(__file__), 'Bank', 'bank-additional-full.xlsx'))
 
 
 # In[46]:
@@ -491,7 +492,7 @@ def load_data(path):
     df = pd.read_excel(path)
     return df
 
-df = load_data(r"C:\Users\Lakshya\Bank\bank-additional-full.xlsx")
+df = load_data(os.path.join(os.path.dirname(__file__), "Bank", "bank-additional-full.xlsx"))
 
 # =====================================================
 # ---------------- Sidebar Filters --------------------
