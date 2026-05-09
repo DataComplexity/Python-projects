@@ -31,6 +31,3 @@ Each project directory contains its own `requirements.txt` and a detailed `READM
 - **CV**: OpenCV (LBPH, Haar Cascades)
 - **Data**: Pandas, Matplotlib, Seaborn
 - **UI**: Streamlit (Reactive Web Apps)
-
----
-*Developed by Dataanomaly190*
