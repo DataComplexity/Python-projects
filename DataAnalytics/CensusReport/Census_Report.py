@@ -450,7 +450,7 @@ df = load_data()
 # ---------------- Sidebar Filters -------------------
 # =====================================================
 
-st.sidebar.header("Global Filters")
+st.sidebar.header("Filters")
 
 income_option = st.sidebar.selectbox("Income", ["All", "<=50K", ">50K"])
 sex_option = st.sidebar.selectbox("Gender", ["All"] + sorted(df["sex"].unique()))
