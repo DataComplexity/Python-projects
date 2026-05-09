@@ -1,0 +1,30 @@
+services:
+  # 1. Bank Data Analysis
+  - type: web
+    name: bank-analytics-dashboard
+    env: python
+    buildCommand: pip install -r BankData_Analysis/requirements.txt
+    startCommand: streamlit run BankData_Analysis/Bank-Data-Analysis.py --server.port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+
+  # 2. Books Analysis
+  - type: web
+    name: books-analytics-dashboard
+    env: python
+    buildCommand: pip install -r BooksAnalysis/requirements.txt
+    startCommand: streamlit run BooksAnalysis/BooksAnalysis_Dashboard.py --server.port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+
+  # 3. Census Report
+  - type: web
+    name: census-analytics-dashboard
+    env: python
+    buildCommand: pip install -r CensusReport/requirements.txt
+    startCommand: streamlit run CensusReport/Census_Report.py --server.port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0

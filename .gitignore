@@ -11,6 +11,7 @@ ENV/
 # Computer Vision / ML Models
 *.yml
 *.yaml
+!render.yaml
 *.h5
 *.h5
 *.pkl
