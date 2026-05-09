@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Computer Vision / ML Models
+*.yml
+*.yaml
+*.h5
+*.h5
+*.pkl
+*.pb
+*.tflite
+*.onnx
+
+# Data & Databases
+*.csv
+*.xlsx
+*.sqlite3
+dataset/
+known_faces/*.pkl
+face_model.yml
+labels.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+screenshot_*.jpg
+captured_*.jpg
