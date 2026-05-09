@@ -652,7 +652,7 @@ def load_data(path=None):
     return df
 
 # ---------------- Sidebar / Filters ---------------- #
-st.sidebar.header("🔎 Filters")
+st.sidebar.header("Filters")
 
 # language choices with 'All' option
 languages = sorted(df['Language_Code'].dropna().unique().tolist())
@@ -682,7 +682,7 @@ filtered_df = filtered_df[filtered_df['Average_Rating'].fillna(0) >= min_rating]
 filtered_df = filtered_df[filtered_df['Ratings_Count'].fillna(0) >= min_ratings_count]
 
 # ---------------- Header / KPIs ---------------- #
-st.title("📚 Book Analytics Dashboard")
+st.title("Book Analytics Dashboard")
 
 # show raw data toggle
 if st.checkbox("Show Raw Data (top 5 rows)"):
@@ -697,10 +697,10 @@ col3.metric("Top Publisher (filtered)", top_pub)
 # quick download button for CSV
 csv_buffer = io.StringIO()
 filtered_df.to_csv(csv_buffer, index=False)
-st.download_button("📥 Download CSV", csv_buffer.getvalue(), file_name="books.csv", mime="text/csv")
+st.download_button("Download CSV", csv_buffer.getvalue(), file_name="books.csv", mime="text/csv")
 
 # ---------------- Tabs ---------------- #
-tab1, tab2, tab3 = st.tabs(["⚡ NumPy Operations", "📑 Pandas Operations", "📊 Visual Analytics"])
+tab1, tab2, tab3 = st.tabs(["NumPy Operations", "Pandas Operations", "Visual Analytics"])
 
 # =====================================================
 # ---------------- NumPy Based Visuals ----------------
